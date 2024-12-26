@@ -1,0 +1,13 @@
+{
+  "name": "01-hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node hello.js",
+    "yt": "python test.py"
+  },
+  "author": "",
+  "license": "ISC"
+}
