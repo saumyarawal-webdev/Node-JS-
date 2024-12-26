@@ -1,0 +1,7 @@
+after exit if we again run exit then due to finding tasks last it runs...
+
+the solution may be we can change format to entry tasks exit.
+
+or you may suggest...
+
+entry is working properly. 
