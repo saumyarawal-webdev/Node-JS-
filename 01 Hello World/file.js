@@ -2,6 +2,9 @@ const fs = require("fs");
 
 // two types of functions - synchronous and asynchronous
 
+// Synchronous --- blocking request
+//Asynchrounous ---- non blocking request
+
 //Sync....
 // fs.writeFileSync("./test.txt", "hello there....2");
 
@@ -38,3 +41,15 @@ const fs = require("fs");
 //make directory
 //fs.mkdirSync("my-docs");
 //fs.mkdirSync("my-docs/a", { recursive: true });
+// console.log("1");
+
+// //blocking req
+// //const res = fs.readFileSync("./contacts.txt", "utf-8");
+// const res = fs.readFile("./contacts.txt", "utf-8", (error, res) => {
+//   console.log(res);
+// });
+
+// console.log("2");
+const os = require("os");
+
+console.log(os.cpus().length);
