@@ -1,4 +1,7 @@
 const fs = require("fs");
+
+// two types of functions - synchronous and asynchronous
+
 //Sync....
 // fs.writeFileSync("./test.txt", "hello there....2");
 
@@ -20,4 +23,18 @@ const fs = require("fs");
 //   }
 // });
 
-fs.appendFileSync("./test.txt", `${new Date().getDate().toLocaleString()}\n`);
+// append file
+//fs.appendFileSync("./test.txt", `${new Date().getDate().toLocaleString()}\n`);
+
+//copy file
+//fs.cpSync("./test.txt", "copy.txt");
+
+//delete file
+//fs.unlinkSync("./copy.txt");
+
+//status of file
+//console.log(fs.statSync("./test.txt").isFile());
+
+//make directory
+//fs.mkdirSync("my-docs");
+//fs.mkdirSync("my-docs/a", { recursive: true });
