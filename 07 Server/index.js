@@ -1,11 +1,16 @@
 const http = require("http");
+const url = require("url");
 const fs = require("fs");
 const port = 3000;
 const server = http.createServer((req, res) => {
+  if (req.url == "/favicon.ico") {
+    return res.end();
+  }
   console.log("New Request received.");
+  const myUrl = url.parse(req.url, true);
   const log = `${Date.now()}: New Request at ${req.url} on port ${port}\n`;
   let html = ``;
-  switch (req.url) {
+  switch (myUrl.pathname) {
     case "/":
       html = `<!DOCTYPE html>
 <html lang="en">
@@ -39,7 +44,7 @@ const server = http.createServer((req, res) => {
 </head>
 <body style="margin: 0; font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4;">
   <div style="background-color:rgb(209, 185, 31); color: white; padding: 20px;">
-      <h1 style="margin: 0;">Welcome to My Server</h1>
+      <h1 style="margin: 0;">Welcome ${myUrl.query.myname}!</h1>
   </div>
   <div style="padding: 20px;">
       <p style="font-size: 18px; color: #333;">
@@ -76,6 +81,9 @@ const server = http.createServer((req, res) => {
 </body>
 </html>`;
   }
+
+  console.log(myUrl);
+  console.log("Name : ", myUrl.query.myname);
 
   fs.appendFile("log.txt", log, (err, data) => {
     res.setHeader("Content-Type", "text/html");
