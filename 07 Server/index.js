@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
   }
   console.log("New Request received.");
   const myUrl = url.parse(req.url, true);
-  const log = `${Date.now()}: New Request at ${req.url} on port ${port}\n`;
+  const log = `${Date.now()}: New Request at ${req.method} ${req.url}\n`;
   let html = ``;
   switch (myUrl.pathname) {
     case "/":
@@ -82,8 +82,8 @@ const server = http.createServer((req, res) => {
 </html>`;
   }
 
-  console.log(myUrl);
-  console.log("Name : ", myUrl.query.myname);
+  // console.log(myUrl);
+  // console.log("Name : ", myUrl.query.myname);
 
   fs.appendFile("log.txt", log, (err, data) => {
     res.setHeader("Content-Type", "text/html");

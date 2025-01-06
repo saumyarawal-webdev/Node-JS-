@@ -1,6 +1,1 @@
-1736006962120: New Request at /about?myname=Hetvi&uid=1&search=dog on port 3000
-1736006962617: New Request at /favicon.ico on port 3000
-1736007022842: New Request at /about?myname=Hetvi&uid=1&search=dog on port 3000
-1736007023276: New Request at /favicon.ico on port 3000
-1736007097791: New Request at /about?myname=Hetvi&uid=1&search=dog on port 3000
-1736007128294: New Request at /about?myname=saumya&uid=1&search=dog on port 3000
+1736165577300: New Request at GET /
