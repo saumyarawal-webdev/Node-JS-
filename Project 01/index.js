@@ -1,10 +1,12 @@
 const express = require("express");
-
+const fs = require("fs");
 const app = express();
 
 const PORT = 8000;
 
-const users = require("./fake_data.json");
+//middleware
+app.use(express.urlencoded({ extended: false }));
+let users = require("./fake_data.json");
 // Route
 app.get("/users", (req, res) => {
   const html = `<ul>
@@ -28,7 +30,11 @@ app.get("/api/users/:id", (req, res) => {
 
 app.post("/api/users", (req, res) => {
   //TODO : create new user
-  return res.json({ status: "pending" });
+  const body = req.body;
+  console.log(body);
+  users.push({ id: users.length + 1, ...body });
+  fs.writeFile("./fake_data.json", JSON.stringify(users), (err, data) => {});
+  return res.json({ status: "success", id: users.length });
 });
 
 app.patch("/api/users/:id", (req, res) => {
