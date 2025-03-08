@@ -6,6 +6,21 @@ const PORT = 8000;
 
 //middleware
 app.use(express.urlencoded({ extended: false }));
+
+app.use((req, res, next) => {
+  // return res.json({ message: "Middleware interupted request." });
+  console.log("Hello from middleware 1");
+
+  next();
+});
+
+app.use((req, res, next) => {
+  // return res.json({ message: "Middleware interupted request." });
+  console.log("Hello from middleware 2");
+
+  // res.end("Hello from middleware 2");
+  next();
+});
 let users = require("./fake_data.json");
 // Route
 app.get("/users", (req, res) => {
