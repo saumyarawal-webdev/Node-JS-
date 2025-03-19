@@ -11,3 +11,10 @@ POST /users - create new user
 PATCH /users/1 - Edit the user with id 1
 
 DELETE /users/1 - DELETE the user with id 1
+
+Name:rawalsaumya22
+Pass:Eq1gH9MqoAXAeyWE
+
+
+saumya007
+saumya7103
